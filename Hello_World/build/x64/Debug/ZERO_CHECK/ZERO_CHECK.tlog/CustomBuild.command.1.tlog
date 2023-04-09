@@ -1,0 +1,10 @@
+^C:\USERS\POGREBNYAK\SOURCE\OTUSC++\HELLO_WORLD\BUILD\CMAKEFILES\20429B1F758467360A64FCF5A50E587E\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/pogrebnyak/source/OtusC++/Hello_World -BC:/Users/pogrebnyak/source/OtusC++/Hello_World/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/pogrebnyak/source/OtusC++/Hello_World/build/01.hello_world.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,3 @@
+C:/Users/pogrebnyak/source/OtusC++/Hello_World/build/CMakeFiles/hello_world.dir
+C:/Users/pogrebnyak/source/OtusC++/Hello_World/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/pogrebnyak/source/OtusC++/Hello_World/build/CMakeFiles/ZERO_CHECK.dir
