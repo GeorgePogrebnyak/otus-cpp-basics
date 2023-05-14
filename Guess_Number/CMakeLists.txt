@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.5)
 project(02.guess_number)
 
 add_executable(guess_number 
-    guess_number.cpp
+    Guess_Number.cpp
 )
 
 set_target_properties(guess_number PROPERTIES
