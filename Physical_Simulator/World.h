@@ -1,5 +1,5 @@
 #pragma once
-#include "Ball.hpp"
+#include "Ball.h"
 #include "Physics.h"
 #include <vector>
 #include <string>

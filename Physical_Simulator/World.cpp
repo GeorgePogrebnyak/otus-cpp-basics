@@ -1,5 +1,6 @@
 #include "World.h"
 #include "Painter.h"
+#include "Ball.h"
 #include <fstream>
 
 // Длительность одного тика симуляции.
@@ -60,15 +61,14 @@ World::World(const std::string& worldFilePath) {
 		// В базовой части задания этот параметр
 		stream >> std::boolalpha >> isCollidable;
 
-		// TODO: место для доработки.
-		// Здесь не хватает самого главного - создания
-		// объекта класса Ball со свойствами, прочитанными
-		// выше, и его помещения в контейнер balls
+		Ball::Ball(double radius, Point position, Velocity velocity) {
+			radius = radius;
+		}
 
-		// После того как мы каким-то образом
-		// сконструируем объект Ball ball;
-		// добавьте его в конец контейнера вызовом
-		// balls.push_back(ball);
+		Point position = { x, y };
+		Velocity velocity = Point{ vx, vy };
+		Ball ball(radius, position, velocity);
+		balls.push_back(ball);
 	}
 }
 
