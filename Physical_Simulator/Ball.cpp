@@ -25,7 +25,7 @@ Velocity Ball::getVelocity() const {
  * @param painter контекст отрисовки
  */
 void Ball::draw(Painter& painter) const {
-	// TODO: место для доработки
+	this->color;
 }
 
 /**
@@ -49,7 +49,7 @@ Point Ball::getCenter() const {
  * не требуется
  */
 double Ball::getRadius() const {
-	return Radius;
+	return radius;
 }
 
 /**
@@ -60,5 +60,5 @@ double Ball::getRadius() const {
  * эквивалентна объему: PI * radius^3 * 4. / 3.
  */
 double Ball::getMass() const {
-	return Mass;
+	return mass;
 }

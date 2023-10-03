@@ -5,7 +5,7 @@
 
 class Ball {
 public:
-	Ball(double radius, Point position, Velocity velocity);
+	Ball(double radius, Point position, Velocity velocity, Color color);
 	void setVelocity(const Velocity& velocity);
 	Velocity getVelocity() const;
 	void draw(Painter& painter) const;
@@ -16,6 +16,7 @@ public:
 private:
 	Velocity velocity;
 	Point center;
-	double radius = 5;
-	double Mass = M_PI * pow(radius, 3.0) * 4 / 3;
+	double radius;
+	double mass;
+	Color color;
 };

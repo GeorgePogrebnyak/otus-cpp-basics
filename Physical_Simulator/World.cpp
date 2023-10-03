@@ -61,13 +61,10 @@ World::World(const std::string& worldFilePath) {
 		// ¬ базовой части задани€ этот параметр
 		stream >> std::boolalpha >> isCollidable;
 
-		Ball::Ball(double radius, Point position, Velocity velocity) {
-			radius = radius;
-		}
-
 		Point position = { x, y };
 		Velocity velocity = Point{ vx, vy };
-		Ball ball(radius, position, velocity);
+		Color color = { red, green, blue };
+		Ball ball(radius, position, velocity, color);
 		balls.push_back(ball);
 	}
 }
@@ -107,4 +104,11 @@ void World::update(double time) {
 	restTime = time - double(ticks) * timePerTick;
 
 	physics.update(balls, ticks);
+}
+Ball::Ball(double radius, Point position, Velocity velocity, Color color) {
+	this->radius = radius;
+	this->center = position;
+	this->velocity = velocity;
+
+	mass = M_PI * pow(radius, 3.0) * 4 / 3;
 }
