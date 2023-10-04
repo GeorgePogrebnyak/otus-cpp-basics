@@ -25,7 +25,7 @@ Velocity Ball::getVelocity() const {
  * @param painter контекст отрисовки
  */
 void Ball::draw(Painter& painter) const {
-	this->color;
+	painter.draw(center, radius, color);
 }
 
 /**
@@ -61,4 +61,12 @@ double Ball::getRadius() const {
  */
 double Ball::getMass() const {
 	return mass;
+}
+Ball::Ball(double radius, Point position, Velocity velocity, Color color) {
+	this->radius = radius;
+	this->center = position;
+	this->velocity = velocity;
+	this->color = color;
+
+	mass = M_PI * pow(radius, 3.0) * 4 / 3;
 }

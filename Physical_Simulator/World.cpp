@@ -105,10 +105,3 @@ void World::update(double time) {
 
 	physics.update(balls, ticks);
 }
-Ball::Ball(double radius, Point position, Velocity velocity, Color color) {
-	this->radius = radius;
-	this->center = position;
-	this->velocity = velocity;
-
-	mass = M_PI * pow(radius, 3.0) * 4 / 3;
-}
