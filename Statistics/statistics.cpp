@@ -12,7 +12,7 @@ public:
 
 class Min : public IStatistics {
 public:
-	Min() : m_min{std::numeric_limits<double>::min()} {
+	Min() : m_min{std::numeric_limits<double>::max()} {
 	}
 	
 	void update(double next) override {
@@ -35,11 +35,11 @@ private:
 
 class Max : public IStatistics {
 public:
-	Max() : m_max{ std::numeric_limits<double>::max() } {
+	Max() : m_max{ std::numeric_limits<double>::lowest() } {
 	}
 
 	void update(double next) override {
-		if (next < m_max) {
+		if (next > m_max) {
 			m_max = next;
 		}
 	}
@@ -68,10 +68,9 @@ int main() {
 	while (std::cin >> val) {
 		
 		for (size_t i = 0; i < statistics_count; ++i) {
-			statistics[i]->update(val);			
+			statistics[i]->update(val);	
 		}
 	}
-	
 
 	// Handle invalid input data
 	if (!std::cin.eof() && !std::cin.good()) {
@@ -83,6 +82,7 @@ int main() {
 	for (size_t i = 0; i < statistics_count; ++i) {
 	std::cout << statistics[i]->name() << " = " << statistics[i]->eval() << std::endl;
 	}
+	
 	statistics[0] = new Max{};
 	for (size_t i = 0; i < statistics_count; ++i) {
 		std::cout << statistics[i]->name() << " = " << statistics[i]->eval() << std::endl;
